@@ -131,3 +131,7 @@ function userCards(gitObj) {
 }
 
 //inside userCards
+
+const {data} = gitObj;
+
+const cards = document.querySelector(".cards");
