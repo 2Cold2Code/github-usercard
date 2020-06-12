@@ -1,4 +1,8 @@
-/*
+axios.get('https://api.github.com/users/2cold2code')
+     .then(response => console.log(response))
+     .catch(err => console.log(err.errors))
+
+     /*
   STEP 1: using axios, send a GET request to the following URL
     (replacing the placeholder with your Github name):
     https://api.github.com/users/<your name>
