@@ -139,5 +139,8 @@ function userCards(gitObj) {
   img.setAttribute("src", data["avatar_url"]);
   card.appendChild(img);
 
-}
+  const cardInfo = document.createElement("div");
+  cardInfo.classList.add("card-info");
+  card.appendChild(cardInfo);
 
+}
