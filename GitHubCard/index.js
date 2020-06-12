@@ -142,5 +142,10 @@ function userCards(gitObj) {
   const cardInfo = document.createElement("div");
   cardInfo.classList.add("card-info");
   card.appendChild(cardInfo);
-
+  
+  const name = document.createElement("h3");
+  name.classList.add("name");
+  name.textContent = data["name"];
+  cardInfo.appendChild(name);
 }
+
