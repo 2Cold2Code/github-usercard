@@ -127,11 +127,13 @@ console.log("This is followersArray: ", followersArray);
 */
 
 function userCards(gitObj) {
-
+  const {data} = gitObj;
+  
+  const cards = document.querySelector(".cards");
+  
+  const card = document.createElement("div");
+  card.classList.add("card");
+  cards.appendChild(card);
+  
 }
-
-//inside userCards
-
-const {data} = gitObj;
-
-const cards = document.querySelector(".cards");
+  
