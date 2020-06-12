@@ -73,9 +73,8 @@ const followersArray = [];
            https://api.github.com/users/<your name>
 */
 
-const gitCall = (address) => axios.get(address);
 function gitByUser(usrnm){
-  gitCall(`https://api.github.com/users/${usrnm}`).then(response => userCards(response)).catch(e => console.log(e))
+  axios.get(`https://api.github.com/users/${usrnm}`).then(response => userCards(response)).catch(e => console.log(e))
 }
 const me = "2Cold2Code";
 const myGit = gitByUser(me);
@@ -170,7 +169,7 @@ function userCards(gitObj) {
   cardInfo.appendChild(followers);
   
   const followerURL = data["followers_url"];
-  gitCall(followerURL).then((obj) => {
+  gitByUser(followerURL).then((obj) => {
     obj.data.forEach((follower) => followersArray.push(follower.url))
   })
   .catch(error => console.log('Error \u{498f3}'));
@@ -185,3 +184,7 @@ function userCards(gitObj) {
 
   return cards;
 }
+
+myGit
+  .then((response) => userCards(response))
+  .catch((err) => console.log("error \u{02970}\u{02964} ", err));
