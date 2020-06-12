@@ -156,5 +156,14 @@ function userCards(gitObj) {
   const location = document.createElement("p");
   location.textContent = `Location: ${data["location"]}`;
   cardInfo.appendChild(location);
+  
+  const profile = document.createElement("p");
+  cardInfo.appendChild(profile);
+  
+  const profileLink = document.createElement("a");
+  profileLink.href = data["url"];
+  profileLink.textContent = `Profile: ${profileLink.href}`;
+  
+  profile.appendChild(profileLink);
 }
 
