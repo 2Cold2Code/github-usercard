@@ -73,12 +73,12 @@ const followersArray = [];
            https://api.github.com/users/<your name>
 */
 
-const myGit = "https://api.github.com/users/2Cold2Code";
 const gitCall = (address) => axios.get(address);
-const myCall = gitCall(myGit);
-function gitCallByUserName(usrnm){
+function gitByUser(usrnm){
   gitCall(`https://api.github.com/users/${usrnm}`).then(response => userCards(response)).catch(e => console.log(e))
 }
+const me = "2Cold2Code";
+const myGit = gitByUser(me);
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -104,7 +104,6 @@ function gitCallByUserName(usrnm){
 */
 
 let followersArray = [];
-console.log("This is followersArray: ", followersArray);
 
 /* Step 3: Create a function that accepts a single gitObject as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -169,4 +168,10 @@ function userCards(gitObj) {
   const followers = document.createElement("p");
   followers.textContent = `Followers: ${data["followers"]}`;
   cardInfo.appendChild(followers);
+  
+  const followerURL = data["followers_url"];
+  gitCall(followerURL).then((obj) => {
+    obj.data.forEach((follower) => followersArray.push(follower.url))
+  })
+  .catch(error => console.log('Error \u{498f3}'));
 }
