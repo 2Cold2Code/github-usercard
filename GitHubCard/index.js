@@ -174,4 +174,8 @@ function userCards(gitObj) {
     obj.data.forEach((follower) => followersArray.push(follower.url))
   })
   .catch(error => console.log('Error \u{498f3}'));
+  
+  const following = document.createElement("p");
+  following.textContent = `Following: ${data["following"]}`;
+  cardInfo.appendChild(following);
 }
