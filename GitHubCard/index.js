@@ -152,5 +152,9 @@ function userCards(gitObj) {
   userName.classList.add("username");
   userName.textContent = data["login"];
   cardInfo.appendChild(userName);
+  
+  const location = document.createElement("p");
+  location.textContent = `Location: ${data["location"]}`;
+  cardInfo.appendChild(location);
 }
 
