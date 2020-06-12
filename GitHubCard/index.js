@@ -165,5 +165,8 @@ function userCards(gitObj) {
   profileLink.textContent = `Profile: ${profileLink.href}`;
   
   profile.appendChild(profileLink);
+  
+  const followers = document.createElement("p");
+  followers.textContent = `Followers: ${data["followers"]}`;
+  cardInfo.appendChild(followers);
 }
-
