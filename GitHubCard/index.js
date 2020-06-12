@@ -178,4 +178,10 @@ function userCards(gitObj) {
   const following = document.createElement("p");
   following.textContent = `Following: ${data["following"]}`;
   cardInfo.appendChild(following);
+  
+  const bio = document.createElement("p");
+  bio.textContent = `Bio: ${data["bio"]}`;
+  cardInfo.appendChild(bio);
+
+  return cards;
 }
